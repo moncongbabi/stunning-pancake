@@ -7,6 +7,9 @@ ENV PORT=$port
 # if needed you can rename the workdir
 WORKDIR /app/analysis
 
+RUN chown 1000:1000 /app
+RUN chmod 755 /app
+
 # Install python, node, npm packages
 RUN apt-get upgrade -y && apt-get update -y && apt-get install -y python3-pip && pip3 install --upgrade pip
 RUN apt-get -y install curl gnupg
@@ -35,6 +38,8 @@ ADD create-user.py /app/analysis/create-user.py
 
 # expose the port
 EXPOSE 7860
+
+USER 1000:1000
 
 # run the jupyter hub feel free to add your arguments needed
 CMD jupyterhub --ip 0.0.0.0 --port 7860 --no-ssl
