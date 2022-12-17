@@ -31,4 +31,4 @@ RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && ch
 EXPOSE 7860
 USER 1000:1000
 
-CMD jupyter-lab --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword' --NotebookApp.allow_origin='*' --NotebookApp.headers='{"Content-Security-Policy": "frame-ancestors *"}'
+CMD jupyter-lab --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword' --NotebookApp.allow_origin='*' --NotebookApp.headers='{"Content-Security-Policy": "frame-ancestors self *"}'
