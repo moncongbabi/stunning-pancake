@@ -23,8 +23,10 @@ RUN pip3 install jupyterhub && \
     pip3 install oauthenticator && \
     pip3 install pandas scipy matplotlib && \
     pip3 install --upgrade jupyterlab jupyterlab-git && \
+    pip3 install ipywidgets && \
     jupyter lab build
 
+RUN jupyter nbextension enable --py widgetsnbextension
 RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && chown admin:admin /home/admin
 
 EXPOSE 7860
