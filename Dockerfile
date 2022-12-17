@@ -34,7 +34,7 @@ ADD jupyterhub_config.py /app/analysis/jupyterhub_config.py
 ADD create-user.py /app/analysis/create-user.py
 
 # expose the port
-EXPOSE $PORT
+EXPOSE 7860
 
 # run the jupyter hub feel free to add your arguments needed
-CMD jupyterhub --ip 0.0.0.0 --port $PORT --no-ssl
+CMD jupyterhub --ip 0.0.0.0 --port 7860 --no-ssl
