@@ -15,7 +15,7 @@ RUN chmod -R 755 /home
 
 # Install python, node, npm packages
 RUN apt-get upgrade -y && apt-get update -y && apt-get install -y python3-pip && pip3 install --upgrade pip
-RUN apt-get -y install curl gnupg
+RUN apt-get -y install curl gnupg wget
 RUN apt-get -y install git
 RUN curl -sL https://deb.nodesource.com/setup_14.x  | bash -
 RUN apt-get -y install nodejs
