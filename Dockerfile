@@ -22,6 +22,10 @@ RUN apt-get -y install nodejs
 RUN npm install
 RUN npm install -g configurable-http-proxy
 
+# RUN echo "export PYTHONPATH=\$PYTHONPATH:/home/admin/.local/bin" >> ~/.bashrc
+
+ENV PATH="/home/admin/.local/bin:${PATH}"
+
 RUN pip3 install jupyterhub && \
     pip3 install --upgrade notebook && \
     pip3 install oauthenticator && \
