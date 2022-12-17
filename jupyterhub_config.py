@@ -21,7 +21,7 @@ headers = {'Content-Security-Policy': 'frame-ancestors *'}
 c.NotebookApp.allow_origin = '*'
 c.NotebookApp.allow_credentials = True
 c.NotebookApp.tornado_settings = {'headers': headers}
-c.NotebookApp.open_browser = False")
+c.NotebookApp.open_browser = False
 
 # for creating new users
 c.LocalAuthenticator.add_user_cmd = ['python3','/app/analysis/create-user.py','USERNAME']
