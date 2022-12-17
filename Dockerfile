@@ -7,7 +7,7 @@ ENV PORT=$port
 # if needed you can rename the workdir
 WORKDIR /app/analysis
 
-RUN -R chown 1000:1000 /app
+RUN chown -R 1000:1000 /app
 RUN chmod 755 /app
 
 # Install python, node, npm packages
