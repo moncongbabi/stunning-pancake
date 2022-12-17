@@ -1,8 +1,8 @@
 ---
-title: Test3
+title: jupyter
 emoji: 🔥
-colorFrom: yellow
-colorTo: blue
+colorFrom: red
+colorTo: red
 sdk: docker
 pinned: false
 ---
