@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM pytorch/pytorch:latest
 
 # for heroku the ports association is dynamic
 ARG port
@@ -39,4 +39,4 @@ EXPOSE 7860
 USER 1000:1000
 
 # run the jupyter hub feel free to add your arguments needed 
-CMD jupyterhub --ip 0.0.0.0 --port 7860 --no-ssl --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword'
+CMD jupyterhub --ip 0.0.0.0 --port 7860 --no-ssl --NotebookApp.token='mytoken' --NotebookApp.password='mypassword'
