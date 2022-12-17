@@ -10,6 +10,9 @@ WORKDIR /app/analysis
 RUN chown -R 1000:1000 /app
 RUN chmod -R 755 /app
 
+RUN chown -R 1000:1000 /home
+RUN chmod -R 755 /home
+
 # Install python, node, npm packages
 RUN apt-get upgrade -y && apt-get update -y && apt-get install -y python3-pip && pip3 install --upgrade pip
 RUN apt-get -y install curl gnupg
