@@ -9,8 +9,7 @@ RUN chown -R 1000:1000 /home
 RUN chmod -R 755 /home
 
 RUN apt-get upgrade -y && apt-get update -y && apt-get install -y python3-pip && pip3 install --upgrade pip
-RUN apt-get -y install curl gnupg wget
-RUN apt-get -y install git
+RUN apt-get -y install git curl gnupg wget nvidia-cuda-dev
 RUN curl -sL https://deb.nodesource.com/setup_14.x  | bash -
 RUN apt-get -y install nodejs
 RUN npm install
