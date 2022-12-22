@@ -34,7 +34,7 @@ RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && ch
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
 
-COPY notebooks ./notebooks
+RUN git clone https://github.com/camenduru/jupyter
 
 USER admin
 
