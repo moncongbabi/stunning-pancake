@@ -29,12 +29,14 @@ RUN pip3 install jupyterhub && \
     
 RUN jupyter nbextension enable --py widgetsnbextension
 
-RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && chown admin:admin /home/admin
+RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && chown -R admin:admin /home/admin
+
+RUN git clone https://github.com/camenduru/jupyter
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
-
-RUN git clone https://github.com/camenduru/jupyter
+RUN chown -R admin:admin /home
+RUN chmod -R 777 /home
 
 USER admin
 
