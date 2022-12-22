@@ -34,6 +34,8 @@ RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && ch
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
 
+COPY notebooks ./notebooks
+
 USER admin
 
 EXPOSE 7860
