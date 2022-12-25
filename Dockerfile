@@ -6,7 +6,7 @@ WORKDIR /content
 
 RUN apt-get update -y && apt-get upgrade -y && apt-get install -y python3-pip && pip3 install --upgrade pip
 
-RUN apt-get install -y curl gnupg wget htop sudo git software-properties-common build-essential libgl1
+RUN apt-get install -y curl gnupg wget htop sudo git git-lfs software-properties-common build-essential libgl1
 
 RUN add-apt-repository ppa:flexiondotorg/nvtop
 RUN apt-get upgrade -y
