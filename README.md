@@ -1,5 +1,5 @@
 ---
-title: Jupyter Notebook
+title: JupyterLab
 emoji: 🔥
 colorFrom: red
 colorTo: red
