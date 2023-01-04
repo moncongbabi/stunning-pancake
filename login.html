@@ -7,8 +7,16 @@
 {% block site %}
 
 <div id="jupyter-main-app" class="container">
-    TEST
-    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Huggig Face Logo"></img>
+    
+    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Huggig Face Logo">
+    <h4>You can duplicate this Space to run it private.</h4>
+    <br>
+    <a class="duplicate-button" style="display:inline-block" target="_blank" href="https://huggingface.co/spaces/camenduru/jupyter?duplicate=true">     
+    <img style="margin: 0" src="https://img.shields.io/badge/-Duplicate%20Space-blue?labelColor=white&amp;style=flat&amp;logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAP5JREFUOE+lk7FqAkEURY+ltunEgFXS2sZGIbXfEPdLlnxJyDdYB62sbbUKpLbVNhyYFzbrrA74YJlh9r079973psed0cvUD4A+4HoCjsA85X0Dfn/RBLBgBDxnQPfAEJgBY+A9gALA4tcbamSzS4xq4FOQAJgCDwV2CPKV8tZAJcAjMMkUe1vX+U+SMhfAJEHasQIWmXNN3abzDwHUrgcRGmYcgKe0bxrblHEB4E/pndMazNpSZGcsZdBlYJcEL9Afo75molJyM2FxmPgmgPqlWNLGfwZGG6UiyEvLzHYDmoPkDDiNm9JR9uboiONcBXrpY1qmgs21x1QwyZcpvxt9NS09PlsPAAAAAElFTkSuQmCC&amp;logoWidth=14" alt="Duplicate Space"></a>
+    <br>
+    <br>
+    <h4>Token is <span style="color:red;">mytoken</span></h4>
+  
     {% if login_available %}
     {# login_available means password-login is allowed. Show the form. #}
     <div class="row">
