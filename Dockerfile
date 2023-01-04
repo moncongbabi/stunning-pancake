@@ -36,6 +36,7 @@ RUN git clone https://github.com/camenduru/jupyter
 
 COPY login.html /usr/local/share/jupyter/hub/templates/login.html
 COPY login.html /home/admin/login.html
+COPY login.html /home/admin/notebook_login.html
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
