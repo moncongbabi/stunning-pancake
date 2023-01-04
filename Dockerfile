@@ -34,9 +34,8 @@ RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && ch
 
 RUN git clone https://github.com/camenduru/jupyter
 
-COPY login.html /usr/local/share/jupyter/hub/templates/login.html
-COPY login.html /home/admin/login.html
-COPY login.html /home/admin/notebook_login.html
+# COPY login.html /usr/local/lib/python3.10/dist-packages/notebook/templates/login.html
+# RUN pip3 install -e /usr/local/lib/python3.10/dist-packages/notebook -U
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
@@ -47,4 +46,4 @@ USER admin
 
 EXPOSE 7860
 
-CMD jupyter-lab --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword' --NotebookApp.tornado_settings="{'headers': {'Content-Security-Policy': 'frame-ancestors *'}}" --NotebookApp.cookie_options="{'SameSite': 'None', 'Secure': True}" --NotebookApp.disable_check_xsrf=True --NotebookApp.extra_template_paths='["/home/admin"]'
+CMD jupyter notebook --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword' --NotebookApp.tornado_settings="{'headers': {'Content-Security-Policy': 'frame-ancestors *'}}" --NotebookApp.cookie_options="{'SameSite': 'None', 'Secure': True}" --NotebookApp.disable_check_xsrf=True
