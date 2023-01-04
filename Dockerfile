@@ -43,4 +43,4 @@ USER admin
 
 EXPOSE 7860
 
-CMD jupyter-lab --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword'
+CMD jupyter-lab --ip 0.0.0.0 --port 7860 --no-browser --allow-root --NotebookApp.token='mytoken' --NotebookApp.password='mypassword' --NotebookApp.tornado_settings="{'headers': {'X-Frame-Options': 'ALLOW-FROM https://huggingface.co/'}}"
