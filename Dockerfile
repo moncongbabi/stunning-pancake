@@ -33,6 +33,7 @@ RUN jupyter nbextension enable --py widgetsnbextension
 RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && chown -R admin:admin /home/admin
 
 RUN git clone https://github.com/camenduru/jupyter
+COPY login.html /usr/local/share/jupyterhub/templates/login.html
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
