@@ -27,7 +27,7 @@
                         <form action="{{base_url}}login?next={{next}}" method="post" class="navbar-form pull-left">
                             {{ xsrf_form_html() | safe }}
                             {% if token_available %}
-                            <label for="password_input"><strong>{% trans %}Password or token:{% endtrans
+                            <label for="password_input"><strong>{% trans %}Token:{% endtrans
                                     %}</strong></label>
                             {% else %}
                             <label for="password_input"><strong>{% trans %}Password:{% endtrans %}</strong></label>
