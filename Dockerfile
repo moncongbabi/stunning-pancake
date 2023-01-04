@@ -34,8 +34,7 @@ RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && ch
 
 RUN git clone https://github.com/camenduru/jupyter
 
-# COPY login.html /usr/local/lib/python3.10/dist-packages/notebook/templates/login.html
-# RUN pip3 install -e /usr/local/lib/python3.10/dist-packages/notebook -U
+COPY login.html /usr/local/lib/python3.10/dist-packages/jupyter_server/templates/login.html
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
