@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /content
 
-RUN apt-get update -y && apt-get upgrade -y && apt-get install -y python3-pip && pip3 install --upgrade pip
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y sudo && apt-get install -y python3-pip && pip3 install --upgrade pip
 
 RUN apt-get install -y curl gnupg wget htop sudo git git-lfs software-properties-common build-essential libgl1
 
@@ -30,11 +30,12 @@ RUN pip3 install jupyterhub && \
     
 RUN jupyter nbextension enable --py widgetsnbextension
 
-RUN useradd admin && echo admin:change.it! | chpasswd && mkdir /home/admin && chown -R admin:admin /home/admin
-
 RUN git clone https://github.com/camenduru/jupyter
-
 COPY login.html /usr/local/lib/python3.10/dist-packages/jupyter_server/templates/login.html
+
+RUN adduser --disabled-password --gecos '' admin
+RUN adduser admin sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN chown -R admin:admin /content
 RUN chmod -R 777 /content
